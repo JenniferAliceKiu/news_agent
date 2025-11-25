@@ -346,10 +346,15 @@ GEM
       concurrent-ruby (~> 1.0)
     uri (1.1.1)
 <<<<<<< HEAD
+<<<<<<< HEAD
     warden (1.2.9)
       rack (>= 2.0.9)
 =======
 >>>>>>> d559cdf (Chats & Messages)
+=======
+    warden (1.2.9)
+      rack (>= 2.0.9)
+>>>>>>> 85734b5 (Chats & Messages)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)

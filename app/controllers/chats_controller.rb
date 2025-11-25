@@ -7,9 +7,9 @@ class ChatsController < ApplicationController
     @chat = current_user.chats.build(chat_params)
     
     if @chat.save
-      redirect_to chat_path(@chat), notice: "Chat créé avec succès !"
+      redirect_to chat_path(@chat), notice: "Chat créé !"
     else
-      redirect_to root_path, alert: "Erreur lors de la création du chat"
+      redirect_to root_path, alert: "Erreur : #{@chat.errors.full_messages.join(', ')}"
     end
   end
 
@@ -21,11 +21,7 @@ class ChatsController < ApplicationController
 
   def set_chat
     @chat = Chat.find(params[:id])
-    
-    # Sécurité : Vérifier que le chat appartient à l'utilisateur
-    unless @chat.user == current_user
-      redirect_to root_path, alert: "Accès refusé"
-    end
+    redirect_to root_path, alert: "Accès refusé" unless @chat.user == current_user
   end
 
   def chat_params
