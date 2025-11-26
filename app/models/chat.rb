@@ -1,6 +1,4 @@
-class Chat < ApplicationRecord
-  belongs_to :user
-  belongs_to :daily
-
-  has_many:messages
+# app/models/daily.rb
+class Daily < ApplicationRecord
+  has_many :chats, dependent: :destroy 
 end
