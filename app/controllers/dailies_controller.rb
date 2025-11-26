@@ -1,8 +1,12 @@
 class DailiesController < ApplicationController
   before_action :set_chat, only: [:new, :create]
 
+  def index
+    @dailies = Daily.order(created_at: :desc)
+  end
+
   def new
-    @last_message = @chat.messages.order(created_at: :desc).first
+    @last_message = @chat.messages.last
     
     default_title = "Daily du #{Time.zone.now.strftime('%d/%m/%Y')} - Résumé de l'actualité"
     
@@ -22,7 +26,6 @@ class DailiesController < ApplicationController
       
       redirect_to @daily, notice: "Nouveau Daily créé et associé."
     else
-      @last_message = @chat.messages.order(created_at: :desc).first
       render :new, status: :unprocessable_entity
     end
   end
