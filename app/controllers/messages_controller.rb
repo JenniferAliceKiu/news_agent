@@ -17,6 +17,7 @@ class MessagesController < ApplicationController
     if @message.save
       begin
         @ruby_llm_chat = RubyLLM.chat(model: "gpt-4o")
+        @ruby_llm_chat = @ruby_llm_chat.with_instructions "Your name is Newsagent: a helpful assistant explaining news simply, like to a high school student, providing historical context to help understand events better."
 
         # Construction historique
         @chat.messages.where.not(id: @message.id).order(:created_at).each do |msg|
