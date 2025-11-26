@@ -4,8 +4,12 @@ class DailiesController < ApplicationController
   def new
     @last_message = @chat.messages.order(created_at: :desc).first
     
-    # On mappe le contenu du message vers le champ 'summary' du Daily
-    @daily = Daily.new(summary: @last_message&.content)
+    default_title = "Daily du #{Time.zone.now.strftime('%d/%m/%Y')} - Résumé de l'actualité"
+    
+    @daily = Daily.new(
+      summary: @last_message&.content,
+      title: default_title
+    )
   end
 
   def create
