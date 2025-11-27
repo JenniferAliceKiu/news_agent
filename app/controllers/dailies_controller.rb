@@ -37,21 +37,7 @@ class DailiesController < ApplicationController
 
   def update
     if @daily.update(daily_params)
-      # Créer un nouveau chat avec le résumé comme premier message
-      chat = Chat.create!(
-        name: "Discussion #{Time.zone.now.strftime('%H:%M')}",
-        daily: @daily,
-        user: current_user
-      )
-
-      # Ajouter le résumé comme premier message de l'assistant
-      Message.create!(
-        chat: chat,
-        content: @daily.summary.presence || "Aucun résumé pour l'instant.",
-        direction: "assistant"
-      )
-
-      redirect_to chat_path(chat), notice: "Chat créé avec le résumé !"
+      redirect_to dailies_path, notice: "Résumé sauvegardé avec succès !"
     else
       render :edit, status: :unprocessable_entity
     end
