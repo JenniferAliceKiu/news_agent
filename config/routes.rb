@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # Routes pour les chats (pour show et messages)
   resources :chats, only: [:show] do
     resources :messages, only: [:create]
+    member do
+      post :generate_summary
+    end
   end
 
   get "up" => "rails/health#show", as: :rails_health_check

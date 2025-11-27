@@ -12,24 +12,14 @@ class DailiesController < ApplicationController
   end
 
   def create
-    @daily = Daily.new(
-      title: "Résumé du #{Time.zone.now.strftime('%d/%m/%Y')}",
-      summary: "",
+    # Créer un chat sans Daily pour commencer à itérer
+    chat = Chat.create!(
+      name: "Discussion #{Time.zone.now.strftime('%H:%M')}",
+      daily: nil,
       user: current_user
     )
 
-    if @daily.save
-      # Créer un chat vide pour commencer à itérer
-      chat = Chat.create!(
-        name: "Discussion #{Time.zone.now.strftime('%H:%M')}",
-        daily: @daily,
-        user: current_user
-      )
-
-      redirect_to chat_path(chat), notice: "Nouveau résumé créé ! Commencez à discuter pour générer votre résumé."
-    else
-      redirect_to root_path, alert: "Erreur lors de la création du résumé"
-    end
+    redirect_to chat_path(chat), notice: "Nouveau chat créé ! Commencez à discuter pour générer votre résumé."
   end
 
   def edit
