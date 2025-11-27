@@ -13,14 +13,16 @@
 
   <%= f.submit "Envoyer", class: "btn btn-primary", style: "height: fit-content;" %>
 
-  <% if chat.daily.present? %>
-    <%= link_to "Générer le résumé", edit_daily_path(chat.daily),
-        class: "btn btn-outline-secondary ms-2",
-        style: "height: fit-content;" %>
-  <% else %>
-    <%= button_to "Générer le résumé", generate_summary_chat_path(chat),
-        method: :post,
-        class: "btn btn-outline-secondary ms-2",
-        style: "height: fit-content;" %>
+  <% if chat.messages.any? %>
+    <% if chat.daily.present? %>
+      <%= link_to "Générer le résumé", edit_daily_path(chat.daily),
+          class: "btn btn-outline-secondary ms-2",
+          style: "height: fit-content;" %>
+    <% else %>
+      <%= button_to "Générer le résumé", generate_summary_chat_path(chat),
+          method: :post,
+          class: "btn btn-outline-secondary ms-2",
+          style: "height: fit-content;" %>
+    <% end %>
   <% end %>
 <% end %>
