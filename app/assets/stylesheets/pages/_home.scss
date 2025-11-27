@@ -1,1 +1,49 @@
 // Specific CSS for your home-page
+.home-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem 0;
+
+  h1 {
+    color: white;
+  }
+
+  .lead {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+  }
+
+  .btn-primary {
+    background-color: white;
+    color: #667eea;
+    border: none;
+    font-weight: 600;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .btn-outline-primary {
+    color: white;
+    border-color: white;
+
+    &:hover {
+      background-color: white;
+      color: #667eea;
+    }
+  }
+}
+
+.bg-light {
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    }
+  }
+}

@@ -1,23 +1,88 @@
-<div
-  class="d-flex flex-column justify-content-center align-items-center"
-  style="min-height: 80vh;"
->
-  <div class="text-center">
-    <h1 class="display-3 mb-4">Bienvenue sur NewsAgent</h1>
+<div class="home-hero">
+  <div class="container">
+    <div class="row align-items-center" style="min-height: 70vh;">
+      <div class="col-lg-6">
+        <h1 class="display-3 fw-bold mb-4">
+          Suivez l'actualité avec intelligence
+        </h1>
 
-    <p class="lead text-muted mb-4">
-      Votre assistant personnel pour suivre et analyser l'actualité
-    </p>
+        <p class="lead text-muted mb-4">
+          Créez vos résumés quotidiens, analysez l'actualité et gardez une trace
+          de vos lectures.
+        </p>
+
+        <div class="d-flex gap-3 mb-5">
+          <%= link_to new_user_registration_path, class: "btn btn-primary btn-lg px-4" do %>
+            Commencer gratuitement
+          <% end %>
+
+          <%= link_to new_user_session_path, class: "btn btn-outline-primary btn-lg px-4" do %>
+            Se connecter
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-lg-6 d-none d-lg-block text-center">
+        <img
+          src="https://illustrations.popsy.co/amber/person-reading-book.svg"
+          alt="Illustration de lecture"
+          class="img-fluid"
+          style="max-width: 500px;"
+        >
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="text-center mt-4">
-    <p class="h5 mb-4">
-      Pour utiliser notre application, connectez-vous ou créez votre compte
-    </p>
+<div class="bg-light py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-12">
+        <h2 class="h3 mb-4">Pourquoi utiliser NewsAgent ?</h2>
+      </div>
+    </div>
 
-    <div class="d-flex gap-3 justify-content-center">
-      <%= link_to "Se connecter", new_user_session_path, class: "btn btn-primary btn-lg" %>
-      <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-outline-primary btn-lg" %>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="mb-3" style="font-size: 3rem;">📰</div>
+            <h5 class="card-title mb-3">Résumés personnalisés</h5>
+
+            <p class="card-text text-muted">
+              Créez et sauvegardez vos résumés d'actualité quotidiens en un
+              clic.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="mb-3" style="font-size: 3rem;">💬</div>
+            <h5 class="card-title mb-3">Discussions intelligentes</h5>
+
+            <p class="card-text text-muted">
+              Échangez avec une IA pour approfondir vos lectures et comprendre
+              l'actualité.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="mb-3" style="font-size: 3rem;">📚</div>
+            <h5 class="card-title mb-3">Historique complet</h5>
+
+            <p class="card-text text-muted">
+              Retrouvez facilement tous vos résumés et conversations passées.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
