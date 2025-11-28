@@ -165,13 +165,13 @@ GEM
       sassc (~> 2.0)
     globalid (1.3.0)
       activesupport (>= 6.1)
+    httplog (1.7.3)
+      rack (>= 2.0)
+      rainbow (>= 2.0.0)
     httparty (0.23.2)
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    httplog (1.7.3)
-      rack (>= 2.0)
-      rainbow (>= 2.0.0)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.2.2)
@@ -402,8 +402,8 @@ DEPENDENCIES
   faker
   feedjira
   font-awesome-sass (~> 6.1)
-  httparty
   httplog
+  httparty
   importmap-rails
   jbuilder
   pg (~> 1.1)
